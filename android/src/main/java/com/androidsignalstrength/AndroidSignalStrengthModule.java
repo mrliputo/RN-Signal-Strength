@@ -1,6 +1,7 @@
 package com.androidsignalstrength;
 
 import android.content.Context;
+import android.net.TrafficStats;
 import android.os.Build;
 import android.telephony.PhoneStateListener;
 import android.telephony.SignalStrength;
@@ -11,6 +12,8 @@ import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.bridge.Promise;
+import com.facebook.react.bridge.WritableMap;
+import com.facebook.react.bridge.WritableNativeMap;
 
 public class AndroidSignalStrengthModule extends ReactContextBaseJavaModule {
 
@@ -33,10 +36,27 @@ public class AndroidSignalStrengthModule extends ReactContextBaseJavaModule {
     getCellSignalLevel(promise);
   }
 
+
+  @ReactMethod
+  public void getTotalRxTxBytes(Promise promise) {
+    long startTime = System.currentTimeMillis();
+    long RxBytes = TrafficStats.getTotalRxBytes();
+    long TxBytes = TrafficStats.getTotalTxBytes();
+
+
+    WritableMap speedInfo = new WritableNativeMap();
+    speedInfo.putDouble("rxBytes", RxBytes);
+    speedInfo.putDouble("txBytes", TxBytes);
+    speedInfo.putDouble("time", startTime);
+
+
+    promise.resolve(speedInfo);
+  }
+
   private void getCellSignalLevel(Promise promise) {
     // API level 23 and above
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
-      promise.resolve(telephonyManager.getSignalStrength().getLevel()+10);
+      promise.resolve(telephonyManager.getSignalStrength().getLevel());
     } else {
       getCellSignalLevelLegacy(promise);
     }
@@ -49,7 +69,7 @@ public class AndroidSignalStrengthModule extends ReactContextBaseJavaModule {
       public void onSignalStrengthsChanged(SignalStrength signalStrength) {
         super.onSignalStrengthsChanged(signalStrength);
         int signalLevel = getSignalLevelLegacy(signalStrength);
-        promise.resolve(signalLevel+1);
+        promise.resolve(signalLevel);
         telephonyManager.listen(this, PhoneStateListener.LISTEN_NONE);
       }
     };

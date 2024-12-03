@@ -1,7 +1,7 @@
 {
   "name": "info-signal-strength",
-  "version": "1.0.5",
-  "description": "React native plugin to get native android cell signal strength.",
+  "version": "1.0.9",
+  "description": "React native plugin to get native android cell signal strength and speed internet.",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
   "types": "lib/typescript/src/index.d.ts",
@@ -26,7 +26,7 @@
     "!**/.*"
   ],
   "scripts": {
-    "example": "yarn workspace rn-signal-strength-example",
+    "example": "yarn workspace info-signal-strength-example",
     "test": "jest",
     "typecheck": "tsc --noEmit",
     "lint": "eslint \"**/*.{js,ts,tsx}\"",
@@ -43,12 +43,12 @@
     "type": "git",
     "url": "git+https://github.com/mrliputo/rn-signal-strength.git"
   },
-  "author": "Abdullah Al Jahid <abdullah.al.jahid@gmail.com> (https://github.com/aajahid), modify to rn 16 <mrliputo@gmail.com> (https://github.com/mrliputo)",
+  "author": "mrliputo <mrliputo@gmail.com> (https://github.com/mrliputo)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mrliputo/rn-signal-strength/issues"
+    "url": "https://github.com/mrliputo/info-signal-strength/issues"
   },
-  "homepage": "https://github.com/mrliputo/rn-signal-strength#readme",
+  "homepage": "https://github.com/mrliputo/info-signal-strength#readme",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },

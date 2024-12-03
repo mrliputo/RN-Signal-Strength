@@ -20,3 +20,7 @@ const AndroidSignalStrength = NativeModules.AndroidSignalStrength
 export function getCurrentSignalStrength(): Promise<number> {
   return AndroidSignalStrength.getCurrentSignalStrength();
 }
+
+export function getTotalRxTxBytes(): Promise<object> {
+  return AndroidSignalStrength.getTotalRxTxBytes();
+}
