@@ -30,13 +30,21 @@ const result = await getTotalRxTxBytes();
 
 //result example : {"rxBytes": 123891237, "txBytes": 41323222, "time": 1453432323}
 ```
+This repository contains a method to measure internet speed using `rxBytes` and `txBytes`. While this approach works, it might not be the most effective or efficient solution. Feel free to suggest improvements or alternative solutions!
+
+## How It Works
+- **rxBytes**: Returns the total number of bytes received since the device was booted.
+- **txBytes**: Returns the total number of bytes transmitted since the device was booted.
+- By comparing the initial and subsequent values of `rxBytes` and `txBytes`, the data usage and speed can be calculated.
+
+## Code Example
+Below is a simple example to demonstrate this approach:
 
 to get internet speed, I have not found an effective and efficient way
 
 but currently with rxBytes,txBytes and comparing the total initial data and the following data
 
-rxBytes and txBytes are:
-Return number of bytes transmitted since device boot.
+
 the way I tried below. if anyone can provide the best solution other than this please let me know
 
 ```js
