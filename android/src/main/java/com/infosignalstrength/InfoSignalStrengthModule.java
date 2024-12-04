@@ -1,4 +1,4 @@
-package com.androidsignalstrength;
+package com.infosignalstrength;
 
 import android.content.Context;
 import android.net.TrafficStats;
@@ -7,7 +7,6 @@ import android.telephony.PhoneStateListener;
 import android.telephony.SignalStrength;
 import android.telephony.TelephonyManager;
 
-import com.facebook.react.bridge.Callback;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
@@ -15,13 +14,13 @@ import com.facebook.react.bridge.Promise;
 import com.facebook.react.bridge.WritableMap;
 import com.facebook.react.bridge.WritableNativeMap;
 
-public class AndroidSignalStrengthModule extends ReactContextBaseJavaModule {
+public class InfoSignalStrengthModule extends ReactContextBaseJavaModule {
 
   private TelephonyManager telephonyManager;
 
-  private static final String NAME = "AndroidSignalStrength";
+  private static final String NAME = "InfoSignalStrength";
 
-  public AndroidSignalStrengthModule(ReactApplicationContext reactContext) {
+  public InfoSignalStrengthModule(ReactApplicationContext reactContext) {
     super(reactContext);
   }
 

@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import { StyleSheet, View, Text, Button } from 'react-native';
-import { getCurrentSignalStrength } from 'react-native-android-signal-strength';
+import { getCurrentSignalStrength } from 'info-signal-strength';
 
 export default function App() {
   const [result, setResult] = React.useState<number | undefined>();

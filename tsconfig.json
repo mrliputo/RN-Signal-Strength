@@ -2,7 +2,7 @@
   "compilerOptions": {
     "rootDir": ".",
     "paths": {
-      "react-native-android-signal-strength": ["./src/index"]
+      "info-signal-strength": ["./src/index"]
     },
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,

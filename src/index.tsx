@@ -1,13 +1,13 @@
 import { NativeModules, Platform } from 'react-native';
 
 const LINKING_ERROR =
-  `The package 'react-native-android-signal-strength' doesn't seem to be linked. Make sure: \n\n` +
+  `The package 'info-signal-strength' doesn't seem to be linked. Make sure: \n\n` +
   Platform.select({ ios: "- You have run 'pod install'\n", default: '' }) +
   '- You rebuilt the app after installing the package\n' +
   '- You are not using Expo Go\n';
 
-const AndroidSignalStrength = NativeModules.AndroidSignalStrength
-  ? NativeModules.AndroidSignalStrength
+const InfoSignalStrength = NativeModules.InfoSignalStrength
+  ? NativeModules.InfoSignalStrength
   : new Proxy(
       {},
       {
@@ -18,9 +18,9 @@ const AndroidSignalStrength = NativeModules.AndroidSignalStrength
     );
 
 export function getCurrentSignalStrength(): Promise<number> {
-  return AndroidSignalStrength.getCurrentSignalStrength();
+  return InfoSignalStrength.getCurrentSignalStrength();
 }
 
 export function getTotalRxTxBytes(): Promise<object> {
-  return AndroidSignalStrength.getTotalRxTxBytes();
+  return InfoSignalStrength.getTotalRxTxBytes();
 }

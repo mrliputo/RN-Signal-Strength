@@ -1,4 +1,4 @@
-package com.androidsignalstrength;
+package com.infosignalstrength;
 
 import com.facebook.react.ReactPackage;
 import com.facebook.react.bridge.NativeModule;
@@ -8,11 +8,11 @@ import com.facebook.react.uimanager.ViewManager;
 import java.util.Collections;
 import java.util.List;
 
-public class AndroidSignalStrengthPackage implements ReactPackage {
+public class InfoSignalStrengthPackage implements ReactPackage {
 
   @Override
   public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
-    return Collections.singletonList(new AndroidSignalStrengthModule(reactContext));
+    return Collections.singletonList(new InfoSignalStrengthModule(reactContext));
   }
 
   @Override

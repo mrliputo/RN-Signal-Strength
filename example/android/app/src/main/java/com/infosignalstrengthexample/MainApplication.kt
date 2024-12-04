@@ -1,4 +1,4 @@
-package com.androidsignalstrengthexample
+package com.infosignalstrengthexample
 
 import android.app.Application
 import com.facebook.react.PackageList
