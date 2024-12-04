@@ -33,8 +33,9 @@ const result = await getTotalRxTxBytes();
 This repository contains a method to measure internet speed using `rxBytes` and `txBytes`. While this approach works, it might not be the most effective or efficient solution. Feel free to suggest improvements or alternative solutions!
 
 ## How It Works
-- **rxBytes**: Returns the total number of bytes received since the device was booted.
-- **txBytes**: Returns the total number of bytes transmitted since the device was booted.
+- **rxBytes**: Returns the total number of bytes received since the device was booted. read here -> [getTotalRxBytes()](https://developer.android.com/reference/android/net/TrafficStats#getTotalRxBytes())
+- **txBytes**: Returns the total number of bytes transmitted since the device was booted. read here -> [getTotalTxBytes()](https://developer.android.com/reference/android/net/TrafficStats#getTotalTxBytes())
+
 - By comparing the initial and subsequent values of `rxBytes` and `txBytes`, the data usage and speed can be calculated.
 
 ## Code Example
